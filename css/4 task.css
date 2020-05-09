@@ -1,0 +1,22 @@
+#table1 td, #table2 td{
+    border: 1px solid black;
+    padding: 6px;
+    min-width: 100px;
+    min-height: 100px;
+}
+
+h3{
+    text-align: left;
+}
+
+.text{
+    margin-top: 15px;
+    margin-bottom: 5px;
+}
+
+.textTable{
+    text-align: center;
+    padding: 5px;
+    margin-top: 15px;
+    margin-bottom: 5px;
+}

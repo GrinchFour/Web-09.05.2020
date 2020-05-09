@@ -1,0 +1,132 @@
+function getRandomInt(min, max) {
+    return Number(Math.floor(Math.random() * (max - min))) + Number(min);
+}
+
+function getArray() {
+
+    var min = prompt("Введите минимальное (включительно) значение: ");
+    if (isNaN(min)) {
+        alert("Введите корректное значение заново: ");
+        getArray();
+    }
+
+    var max = prompt("Введите максимальное (не включительно) значение: ");
+    if (isNaN(max)) {
+        alert("Введите корректное значение заново: ");
+        getArray()
+    }
+
+    if (min > max) {
+        str = max;
+        max = min;
+        min = str;
+    }
+    var num = prompt("Введите размерность матрицы: ");
+    if (isNaN(num) || num == 0) {
+        alert("Введите корректное значение заново: ");
+        getArray()
+    }
+
+    let a = new Array(num);
+    for (let i = 0; i < num; i++) {
+        a[i] = new Array(num);
+        for (let j = 0; j < num; j++)
+            a[i][j] = getRandomInt(min, max);
+    }
+
+    var el = document.getElementById('table1');
+    el.innerHTML = '';
+    var tbl = document.createElement('table');
+    el.appendChild(tbl);
+    var tbd = document.createElement('tbody');
+    document.getElementById('table1').appendChild(tbd);
+    for (let i = 0; i < a.length; i++) {
+        var tX = document.createElement('tr');
+        tbd.appendChild(tX);
+
+        for (let j = 0; j < a.length; j++) {
+            var tY = document.createElement('td');
+            tY.innerHTML = a[i][j];
+            tX.appendChild(tY);
+        }
+    }
+
+    if (!document.getElementById('newButton')) {
+        var btn = document.createElement('input');
+        btn.name = "button";
+        btn.type = 'button';
+        btn.value = 'Получить отсортированную матрицу';
+        btn.id = 'newButton';
+        btn.onclick = function () { getResultArray(a); }
+    }
+    document.getElementById('myPlace').appendChild(btn);
+}
+
+function getResultArray(a) {
+    let b = new Array(a.length);
+    for (let i = 0; i < a.length; i++) {
+        b[i] = new Array(a.length);
+        for (let j = 0; j < a.length; j++) b[i][j] = 0;
+    }
+
+    alert(a[a.length - 1][a.length - 1]);
+    BubbleSort(a);
+
+    for (let i = 0; i < b.length; i++)
+        for (let j = 0; j < b.length; j++) {
+            if (i % 2 == 0) b[i][j] = a[i][i];
+            else b[i][j] = a[i][b.length - j];
+        }
+
+  //  alert(b[0][0]);
+  //  alert(b[b.length - 1][b.length - 1]);
+
+    var el = document.getElementById('table2');
+    el.innerHTML = '';
+    var tbl = document.createElement('table');
+    el.appendChild(tbl);
+    var tbd = document.createElement('tbody');
+    document.getElementById('table2').appendChild(tbd);
+
+    for (let i = 0; i < b.length; i++) {
+        var tX = document.createElement('tr');
+        tbd.appendChild(tX);
+
+        for (let j = 0; j < b.length; j++) {
+            var tY = document.createElement('td');
+            tY.innerHTML = b[i][j];
+            tX.appendChild(tY);
+        }
+    }
+}
+
+function BubbleSort(a) {
+    let b = new Array(a.length * a.length);
+    let Buff = 0;
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a.length; j++) {
+            b[Buff] = a[i][j];
+            Buff++;
+        }
+    }
+    alert(b[Buff]);
+    let n = b.length;
+    for (var i = 0; i < n - 1; i++) {
+        for (var j = 0; j < n - 1 - i; j++) {
+            if (b[j + 1] > b[j]) {
+                var t = b[j + 1];
+                b[j + 1] = b[j];
+                b[j] = t;
+            }
+        }
+    }
+    alert("хуй");
+    for (let i = 0; i < a.length; i++) {
+        for (let j = 0; j < a.length; j++) {
+            a[i][j] = b[Buff];
+            Buff++;
+        }
+    }
+
+    return a;
+}

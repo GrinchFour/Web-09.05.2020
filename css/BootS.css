@@ -1,0 +1,213 @@
+#container-fluid{
+min-width: 700px;
+}
+
+#navbar{
+    margin: 0;
+    padding-left: 24px;
+    list-style-type: none;
+    text-align: left;
+    position: relative;
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+#navbar a{
+    width: 150px;
+    padding: 5px;
+    text-decoration: none;
+    display: block;
+    color: black;
+    border: 1px solid rgba(0,0,0,.15);
+    font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+}
+
+#navbar a:hover{
+    background-color: whitesmoke;
+    color: lightseagreen;
+}
+
+#navbar :hover > ul{
+    display: block;
+}
+
+#navbar ul > :hover {
+    background-color: whitesmoke;
+}
+
+#navbar > :hover {
+    background-color: whitesmoke;
+}
+
+#navbar ul {
+    width: 150px;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+    display: none;
+    position: absolute;
+    left: 100%;
+    top: 0;
+    background-color: white;
+}
+
+.footer{
+    margin: 40px;
+}
+
+.mediaImg{
+    width: 64px;
+}
+
+.text{
+    text-align: left;
+    text-indent: 20px;
+    font-size: 20px;
+}
+
+img{
+    width: 90%;
+    margin: 5px;
+}
+
+
+.video{
+    width: 90%;
+    height: 350px;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul {
+text-align: left;
+}
+
+.clear {
+    clear: both;
+}
+
+#carouselExampleControls{
+    margin: 30px auto;
+}
+
+.figure-caption{
+    text-align: center;
+}
+
+.w300{
+    width: 300px;
+    margin:auto;
+}
+
+.accordion{
+    width: 60%;
+    margin: 30px auto;
+}
+
+.table{
+    width: 60%;
+    margin: 30px auto;
+}
+
+.picture{
+    margin: 40px 0;
+    text-align: center;
+    stroke-width: 2px;
+    fill-rule:nonzero;
+    stroke-linecap:round;
+    stroke-linejoin: round;
+}
+
+@media print {
+    body {
+        font-family: Times, 'Times New Roman', serif;
+        font-size: 18px;
+        padding: 2cm;
+        width: 100%;
+        border: none;
+        background-color: white;
+        float: none;
+        text-align: center;
+    }
+
+    *#content{
+        margin: 0;
+        text-align: center;
+        width: 100%;
+        border: none;
+        background-color: white;
+        float: none;
+    }
+
+    *#footer{
+        margin: 0;
+        text-align: right;
+        border: none;
+        background-color: white;
+        float: none;
+    }
+
+    *.poem{
+        margin: 0 37%;
+    }
+    
+    *.poem p{
+        text-align: left;
+    }
+
+    h1, h2, h3, h4, p, li {
+        color: black;
+    }
+
+    @page :first {
+        margin: 1cm;
+    }
+    @page :left {
+        margin: 1cm 3cm 1cm 1.5cm;
+    }
+    @page :right {
+        margin: 1cm 3cm 1cm 1.5cm;
+    }
+
+    section h1,section h2,
+    section h3,section h4{
+        page-break-before: always;
+    }
+
+    ul {
+        page-break-inside: avoid;
+    }
+
+    p {
+        widows: 4;
+        orphans: 3;
+    }
+
+    *,
+    *:before,
+    *:after,
+    *:first-letter,
+    p:first-line,
+    div:first-line,
+    blockquote:first-line,
+    li:first-line, *img, *iframe {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    }
+
+    img{
+        display: none;
+        float: none;
+        border: none;
+    }
+
+    *#header, *#navbar, *#sidebarL, 
+    *#sidebarR, *#footer{
+        display: none;
+        float: none;
+        border: none;
+    }
+}
