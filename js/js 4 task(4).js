@@ -117,7 +117,7 @@ function BubbleSort(a) {
 
     Buff = 0;
     for (let i = 0; i < a.length; i++) {
-        for (let j = 0; j < a[j].length; j++) {
+        for (let j = 0; j < a[i].length; j++) {
             a[i][j] = Number(b[Buff]);
             Buff++;
         }
