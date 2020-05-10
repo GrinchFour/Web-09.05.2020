@@ -72,9 +72,9 @@ function getResultArray(a) {
     BubbleSort(a);
 
     for (let i = 0; i < b.length; i++)
-        for (let j = 0; j < b.length; j++) {
-            if (i % 2 == 0) b[i][j] = a[i][i];
-            else b[i][j] = a[i][b.length - j];
+        for (let j = 0; j < b[i].length; j++) {
+            if (i % 2 == 0) b[i][j] = a[i][j];
+            else b[i][j] = a[i][b[j].length - j];
         }
 
     var el = document.getElementById('table2');
@@ -106,23 +106,20 @@ function BubbleSort(a) {
         }
     }
 
-    let n = b.length;
-    for (var i = 0; i < n - 1; i++) {
-        for (var j = 0; j < n - 1 - i; j++) {
-            if (b[j + 1] > b[j]) {
-                var t = b[j + 1];
+    for (let i = 0; i < b.length - 1; i++)
+        for (let j = 0; j < a.length - i - 1; j++)
+            if (b[j] < b[j + 1]) {
+                Buff = b[j + 1];
                 b[j + 1] = b[j];
-                b[j] = t;
+                b[j] = Buff;
             }
-        }
-    }
 
+    Buff = 0;
     for (let i = 0; i < a.length; i++) {
-        for (let j = 0; j < a.length; j++) {
-            a[i][j] = b[Buff];
+        for (let j = 0; j < a[i].length; j++) {
+            a[i][j] = Number(b[Buff]);
             Buff++;
         }
     }
-
     return a;
 }
