@@ -63,13 +63,14 @@ function getArray() {
 }
 
 function getResultArray(a) {
+
+    BubbleSort(a);
+
     let b = new Array(a.length);
     for (let i = 0; i < a.length; i++) {
         b[i] = new Array(a.length);
         for (let j = 0; j < a.length; j++) b[i][j] = 0;
     }
-
-    BubbleSort(a);
 
     for (let i = 0; i < b.length; i++)
         for (let j = 0; j < b[i].length; j++) {
@@ -107,7 +108,7 @@ function BubbleSort(a) {
     }
 
     for (let i = 0; i < b.length - 1; i++)
-        for (let j = 0; j < a.length - i - 1; j++)
+        for (let j = 0; j < b.length - i - 1; j++)
             if (b[j] < b[j + 1]) {
                 Buff = b[j + 1];
                 b[j + 1] = b[j];
