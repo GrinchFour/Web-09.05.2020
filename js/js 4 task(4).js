@@ -75,7 +75,7 @@ function getResultArray(a) {
     for (let i = 0; i < b.length; i++)
         for (let j = 0; j < b[i].length; j++) {
             if (i % 2 == 0) b[i][j] = a[i][j];
-            else b[i][j] = a[i][b[j].length - j];
+            else b[i][j] = a[i][b[j].length - j - 1];
         }
 
     var el = document.getElementById('table2');
